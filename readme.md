@@ -19,6 +19,16 @@ docker-compose -p planes down
 docker exec -it planes_php_1 bash
 ```
 
+Выполнить
+```shell script
+composer install
+```
+
+Для запуска тестов
+```
+php vendor/bin/phpunit -c tests/phpunit.xml
+```
+
 Все запросы проводятся по адресу  **http://127.0.0.1/**
 
 RestApi:
