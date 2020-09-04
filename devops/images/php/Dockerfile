@@ -14,5 +14,6 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN wget https://get.symfony.com/cli/installer -O - | bash
 RUN mv /root/.symfony/bin/symfony /usr/local/bin/symfony
 ADD php.ini /usr/local/etc/php/conf.d/40-custom.ini
+RUN usermod -u 1000 www-data
 WORKDIR /var/www
 CMD ["php-fpm"]
