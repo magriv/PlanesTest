@@ -1,0 +1,16 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+
+  App\:
+    resource: '%kernel.project_dir%/src/'
+
+  hangar_repository:
+    class: App\Repository\HangarRepositoryInterface
+    factory: ['@App\Service\TestHangarsWitAirplanesFactory', 'create']
+
+  App\Service\HangarService:
+    arguments:
+      $hangarRepository: '@hangar_repository'
+
